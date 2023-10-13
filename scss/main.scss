@@ -1,0 +1,252 @@
+$font-family: 'IBM Plex Sans', sans-serif;
+$primary-color: #fff;
+$secundary-color: #000;
+$text-color: $primary-color;
+$tertiary-color: #cd1d66;
+$border-afronding: 15px;
+$font-lg: 50px;
+$font-md: 30px;
+
+@mixin product-container() {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: $secundary-color;
+    max-width: 80%;
+    padding: 20 20 10; 
+}
+
+body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+}
+
+h2 { 
+    font-size: $font-md;
+}
+
+/* stijl voor navigatie*/
+header {
+    background-color: $primary-color;
+    color: $text-color;
+    text-align: center;
+    margin-left: 10px;
+
+    h1 {
+        margin: 0;
+        font-size: $font-lg;
+        color: $secundary-color;
+    }
+}
+
+.nav {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.nav li {
+    display: inline; 
+    margin-right: 20px; 
+}
+
+.nav button {
+    background-color: $secundary-color;
+    color: $text-color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: $border-afronding;
+}
+
+.nav a {
+    text-decoration: none;
+    color: $text-color; 
+}
+
+
+/* stijl voor beschrijving */
+.section-beschrijving{
+    margin-left: 10px;
+}
+
+/* stijl voor product */
+.titel-producten{
+    margin-left: 10px;
+}
+.product-section-start{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: $secundary-color;
+    
+}
+
+.product-start {
+
+    /*
+    width: calc(50% - 20%);
+    padding: 10px;
+    text-align: center;
+    margin: 10px; 
+    */
+    display: block;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex: 1;
+    width: 48%;
+    background-color: $primary-color;
+    border-radius: $border-afronding;
+    padding-top: 25px;
+    
+    img{
+        width: 20%;
+        height: 38%;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: $secundary-color;
+    color: $text-color;
+    text-align: center;
+    padding: 10px;
+    padding-right: 616px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    
+    bottom: 0;
+}
+
+footer p{
+    margin: 23px 10px;
+    font-family: $font-family;
+}
+
+footer h3{
+    margin-right: 40px;
+}
+
+
+/*OVERZICHTSPAGINA*/
+
+.container-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    /*padding-left: 75px;
+    padding-right: 75px;*/
+    padding: 0 50 20 50;
+    border-top: 10px solid $secundary-color;
+    border-bottom: 10px solid $secundary-color;
+}
+
+.container-product1{
+    @include product-container();
+    
+}
+
+.container-product2{
+    @include product-container();
+    /*display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: $secundary-color;
+    max-width: 80%;
+    padding: 20 20 10;*/
+}
+
+.container-product3{
+    @include product-container();
+    border-bottom-right-radius: $border-afronding;
+    border-bottom-left-radius: $border-afronding;
+}
+
+.product {
+    display: block;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    flex: 1;
+    width: 48%;
+    background-color: $primary-color;
+    border-radius: $border-afronding;
+    padding-top: 25px;
+    
+    img{
+        width: 20%;
+        height: 38%;
+    }
+
+    span{
+        font-weight: bold;
+    }
+}
+
+.product-link {
+    text-decoration: none; 
+    color: $secundary-color;
+}
+
+.product-link:hover {
+    text-decoration: underline;
+    color: $tertiary-color; 
+}
+
+/*filter*/
+.container-form{
+    display: flex;
+    justify-content: left;
+    margin: auto;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: $secundary-color;
+    max-width: 80%;
+    padding: 20 20 10 20;
+    color: $text-color;
+    border-top-right-radius: $border-afronding;
+    border-top-left-radius: $border-afronding;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 3px solid $tertiary-color;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: $tertiary-color;
+    color: $primary-color;
+    border:none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    
+    &:hover { 
+        background-color: #980341;
+    }
+}
