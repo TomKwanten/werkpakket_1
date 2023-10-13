@@ -4,6 +4,8 @@ $secundary-color: #000;
 $text-color: $primary-color;
 $tertiary-color: #cd1d66;
 $border-afronding: 15px;
+$border: 3px solid $tertiary-color;
+$buttonhover: #980341;
 $font-lg: 50px;
 $font-md: 30px;
 
@@ -94,7 +96,7 @@ header {
     margin: 10px; 
     */
     display: block;
-    border: 1px solid #ddd;
+    border: $border;
     padding: 10px;
     text-align: center;
     margin: 10px;
@@ -122,7 +124,6 @@ footer {
     display: flex;
     justify-content: center;
     position: fixed;
-    
     bottom: 0;
 }
 
@@ -178,7 +179,7 @@ footer h3{
 
 .product {
     display: block;
-    border: 1px solid #ddd;
+    border: $border;
     padding: 10px;
     text-align: center;
     margin: 10px;
@@ -201,11 +202,11 @@ footer h3{
 .product-link {
     text-decoration: none; 
     color: $secundary-color;
-}
 
-.product-link:hover {
+    &:hover{
     text-decoration: underline;
-    color: $tertiary-color; 
+    color: $tertiary-color;     
+    }
 }
 
 /*filter*/
@@ -233,7 +234,7 @@ label {
 select {
     width: 100%;
     padding: 10px;
-    border: 3px solid $tertiary-color;
+    border: $border;
     border-radius: 5px;
 }
 
@@ -247,7 +248,7 @@ input[type="submit"] {
     margin-top: 10px;
     
     &:hover { 
-        background-color: #980341;
+        background-color: $buttonhover;
     }
 }
 
@@ -302,13 +303,78 @@ input[type="submit"] {
                 border: none;
                 margin-top: 5px;
                 padding: 10px 20px;
-                border-radius: $border-afronding;
+                border-radius: 7px;
                 cursor: pointer;
 
                 &:hover {
-                    background-color: #980341;
+                    background-color: $buttonhover;
                 }
             }
+        }
+    }
+}
+
+/*LOGINPAGINA*/
+
+.main-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+/* Loginformulierstijl */
+.login-form {
+    background-color: $secundary-color;
+    color: $text-color;
+    padding: 20px;
+    border: $border;
+    border-radius: $border-afronding;
+    text-align: center;
+
+    h2 {
+        font-size: $font-md;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: $border;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: $tertiary-color;
+            color: $text-color;
+            border: none;
+            padding: 10px 20px;
+            border-radius: $border-afronding;
+            cursor: pointer;
+            margin-top: 10px;
+
+            &:hover {
+                background-color: $buttonhover;
+            }
+        }
+    }
+
+    p {
+        margin-top: 20px;
+
+        a {
+            text-decoration: none;
+            color: $tertiary-color;
         }
     }
 }
