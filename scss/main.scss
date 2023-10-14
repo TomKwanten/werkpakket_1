@@ -8,6 +8,7 @@ $border: 3px solid $tertiary-color;
 $buttonhover: #980341;
 $font-lg: 50px;
 $font-md: 30px;
+$font-sm: 15px;
 
 @mixin product-container() {
     display: flex;
@@ -30,6 +31,7 @@ h2 {
     font-size: $font-md;
 }
 
+/*STARTPAGINA*/
 /* stijl voor navigatie*/
 header {
     background-color: $primary-color;
@@ -142,6 +144,63 @@ footer {
     }
 }
 
+/*responsive*/
+@media (max-width: 768px) {
+    body{
+        font-size: $font-sm;
+    }
+    /*header*/
+    header {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: $font-md; 
+    }
+    /*navigatie*/
+    .nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav li {
+        margin-top: 10px; 
+    }
+
+    .nav button {
+        padding: 10px 20px;
+        display: block; 
+    }
+
+    /*startpagina*/
+    .section-beschrijving {
+        padding: 10px;
+    }
+
+    .product-section-start {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .product-start {
+        width: 80%; 
+    }
+
+    .product-start img {
+        max-width: 100%; 
+    }
+
+    /*footer*/
+    footer {
+        .contact-info {
+            flex-direction: column; 
+            align-items: center; 
+            text-align: center;
+        }
+    }
+}
 
 /*OVERZICHTSPAGINA*/
 
@@ -216,6 +275,26 @@ footer {
     }
 }
 
+/*responsive*/
+@media screen and (max-width: 768px) {
+    .container-product1,
+    .container-product2,
+    .container-product3 {
+        @include product-container();
+        padding: 10px 10px 0;
+
+        .product {
+            width: 100%;
+            margin: 5px;
+
+            img {
+                width: 50%;
+                height: auto;
+            }
+        }
+    }
+}
+
 /*filter*/
 .container-form{
     display: flex;
@@ -259,8 +338,26 @@ input[type="submit"] {
     }
 }
 
-/*PRODUCTPAGINA*/
+/*responsive filter*/
+@media screen and (max-width: 768px) {
+    .container-form {
+        flex-direction: column;
+        max-width: 80%;                 /*deze breedte komt niet overeen met de breedte van de producten
+                                            terwijl ze wel allebij max-width 80% hebben?*/
+        margin: auto;
+        label,
+        select,
+        input[type="submit"] {
+            width: 100%;
+        }
 
+        select {
+            margin: 10px 0;
+        }
+    }
+}
+
+/*PRODUCTPAGINA*/
 .product-details {
     background-color: $secundary-color;
     color: $text-color;
@@ -322,9 +419,42 @@ input[type="submit"] {
         }
     }
 }
+@media screen and (max-width: 768px) {
+    .product-details{
+        max-width: 90%;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        align-items: center;
+        h2{
+            font-size: $font-md;
+            text-align: center;
+        }
+        p{
+            font-size: $font-sm;
+            max-width: 100%;
+            text-align: center;
+        }
+        .product-content{
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 80%;
+            margin: auto;
+            
+            img{
+                max-width: 100%; /*ik kan de afbeelding hier niet in het midden centreren*/
+                display: block;
+                margin: 0 auto;
+                margin-right: 20px;
+            }
+            .add-to-cart{
+                margin: 0 auto; 
+                display: block; 
+            }
+        }
+    }
+}
 
 /*LOGINPAGINA*/
-
 .main-login {
     display: flex;
     justify-content: center;
@@ -333,7 +463,6 @@ input[type="submit"] {
     margin-bottom: 210px;
 }
 
-/* Loginformulierstijl */
 .login-form {
     background-color: $secundary-color;
     color: $text-color;
